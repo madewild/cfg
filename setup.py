@@ -1,10 +1,10 @@
 from setuptools import setup
 
-setup(name='YourAppName',
+setup(name='cfg',
       version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
-      url='http://www.python.org/sigs/distutils-sig/',
+      description='CFG App',
+      author='Max De Wilde',
+      author_email='madewild@ulb.ac.be',
+      url='http://maxdewilde.me/',
 #      install_requires=['Django>=1.3'],
      )
