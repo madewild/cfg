@@ -5,6 +5,7 @@ Python app for CFG grammar
 """
 
 #pylint: disable = locally-disabled, invalid-name
+
 import os
 
 virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
