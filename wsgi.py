@@ -270,10 +270,10 @@ pre {
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
               <h2>Contenu du TP</h2>
-                <!--<form method="POST" action="process.py" id="cfg_form">
+                <form method="POST" action="process.py" id="cfg_form">
                 <input type="submit">
                 </form>
-                <textarea rows="40" cols="100" name="cfg" form="cfg_form">-->
+                <textarea rows="40" cols="100" name="cfg" form="cfg_form">
             </section>
           </section>
         </div>
