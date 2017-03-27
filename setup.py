@@ -6,5 +6,5 @@ setup(name='cfg',
       author='Max De Wilde',
       author_email='madewild@ulb.ac.be',
       url='http://maxdewilde.me/',
-#      install_requires=['Django>=1.3'],
+      install_requires=['nltk==3.2.2'],
      )
