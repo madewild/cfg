@@ -273,7 +273,9 @@ pre {
 </head>
 <body>
 <section class='container'>
-
+        <hgroup>
+        <h1>TP sur les grammaires CFG</h1>
+        </hgroup>
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
