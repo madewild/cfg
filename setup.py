@@ -6,5 +6,5 @@ setup(name='CFG',
       author='Max De Wilde',
       author_email='madewild@ulb.ac.be',
       url='http://maxdewilde.me/',
-      install_requires=['nltk==3.2.2'],
+      install_requires=['nltk==3.2.2', 'requests=2.13.0'],
      )

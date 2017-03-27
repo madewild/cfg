@@ -65,6 +65,9 @@ def application(environ, start_response):
         response_body = ['%s: %s' % (key, value)
                          for key, value in sorted(environ.items())]
         response_body = '\n'.join(response_body)
+    elif environ['PATH_INFO'] == '/correction':
+        text = environ['POST']
+        response_body = text
     else:
         ctype = 'text/html'
         response_body = '''<!doctype html>
@@ -262,16 +265,12 @@ pre {
 </head>
 <body>
 <section class='container'>
-          <hgroup>
-            <h1>TP CFG</h1>
-          </hgroup>
-
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
               <h2>Contenu du TP</h2>
-                <form method="POST" action="process.py" id="cfg_form">
-                <textarea rows="40" cols="100" name="cfg" form="cfg_form">Copiez ici votre grammaire</textarea><br>
+                <form method="POST" action="/correction">
+                <textarea rows="40" cols="100" name="cfg">Copiez ici votre grammaire</textarea><br>
                 <input type="submit">
                 </form>
             </section>
