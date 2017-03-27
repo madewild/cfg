@@ -1,4 +1,10 @@
 #!/usr/bin/python
+
+"""
+Python app for CFG grammar
+"""
+
+#pylint: disable = locally-disabled, invalid-name
 import os
 
 virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
@@ -13,13 +19,13 @@ except IOError:
 #
 
 def application(environ, start_response):
-
+    '''Main app'''
     ctype = 'text/plain'
     if environ['PATH_INFO'] == '/health':
         response_body = "1"
     elif environ['PATH_INFO'] == '/env':
         response_body = ['%s: %s' % (key, value)
-                    for key, value in sorted(environ.items())]
+                         for key, value in sorted(environ.items())]
         response_body = '\n'.join(response_body)
     else:
         ctype = 'text/html'
