@@ -75,7 +75,8 @@ def application(environ, start_response):
         d = parse_qs(request_body)
         cfg = d.get('cfg', [''])[0]
         cfg = escape(cfg)
-        response_body = cfg
+        score, p, n = corr(cfg)
+        response_body = "Score partiel : " + str(score) + "/10 (" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues)"
     else:
         ctype = 'text/html'
         response_body = '''<!doctype html>
