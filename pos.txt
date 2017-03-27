@@ -1,0 +1,10 @@
+Je voudrais un vol pour Paris
+Marie voudrait un vol pour Bruxelles
+Pierre voudrait reserver un vol
+L avion part de Venise
+Il arrivera a Bruxelles a trois heures
+L avion arrivera demain matin
+Marie part de Bruxelles
+Je voudrais reserver un vol pour Bruxelles
+Pierre et Marie arriveront demain
+Elle voudrait un vol de Paris a Bruxelles
