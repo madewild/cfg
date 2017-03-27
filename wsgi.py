@@ -7,6 +7,7 @@ Python app for CFG grammar
 #pylint: disable = locally-disabled, invalid-name
 
 import os
+from cgi import parse_qs, escape
 
 virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
@@ -66,8 +67,15 @@ def application(environ, start_response):
                          for key, value in sorted(environ.items())]
         response_body = '\n'.join(response_body)
     elif environ['PATH_INFO'] == '/correction':
-        text = environ['POST']
-        response_body = text
+        try:
+            request_body_size = int(environ.get('CONTENT_LENGTH', 0))
+        except ValueError:
+            request_body_size = 0
+        request_body = environ['wsgi.input'].read(request_body_size)
+        d = parse_qs(request_body)
+        cfg = d.get('cfg', [''])[0]
+        cfg = escape(cfg)
+        response_body = cfg
     else:
         ctype = 'text/html'
         response_body = '''<!doctype html>
@@ -265,10 +273,10 @@ pre {
 </head>
 <body>
 <section class='container'>
+
         <div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
-              <h2>Contenu du TP</h2>
                 <form method="POST" action="/correction">
                 <textarea rows="40" cols="100" name="cfg">Copiez ici votre grammaire</textarea><br>
                 <input type="submit">
