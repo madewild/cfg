@@ -22,15 +22,13 @@ except IOError:
 
 import nltk
 
-def corr(text):
+def corr(string):
     '''Compute score based on CFG input'''
     pos = open(os.environ['OPENSHIFT_REPO_DIR']+'pos.txt').readlines()
     pos = [line.strip() for line in pos]
 
     neg = open(os.environ['OPENSHIFT_REPO_DIR']+'neg.txt').readlines()
     neg = [line.strip() for line in neg]
-
-    string = 'type CFG here'
 
     lowstring = string.lower()
     gram = nltk.CFG.fromstring(lowstring)
