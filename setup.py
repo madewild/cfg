@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='cfg',
+setup(name='CFG',
       version='1.0',
       description='CFG App',
       author='Max De Wilde',
