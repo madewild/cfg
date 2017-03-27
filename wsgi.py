@@ -271,7 +271,7 @@ pre {
             <section>
               <h2>Contenu du TP</h2>
                 <form method="POST" action="process.py" id="cfg_form">
-                <textarea rows="40" cols="100" name="cfg" form="cfg_form"><br>
+                <textarea rows="40" cols="100" name="cfg" form="cfg_form">Copiez ici votre grammaire</textarea><br>
                 <input type="submit">
                 </form>
             </section>
