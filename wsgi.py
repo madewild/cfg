@@ -24,10 +24,10 @@ import nltk
 
 def corr(text):
     '''Compute score based on CFG input'''
-    pos = open('pos.txt').readlines()
+    pos = open(os.environ['OPENSHIFT_REPO_DIR']+'pos.txt').readlines()
     pos = [line.strip() for line in pos]
 
-    neg = open('neg.txt').readlines()
+    neg = open(os.environ['OPENSHIFT_REPO_DIR']+'neg.txt').readlines()
     neg = [line.strip() for line in neg]
 
     string = 'type CFG here'
