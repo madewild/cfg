@@ -59,7 +59,7 @@ def corr(string):
                 n += 1
                 fpos.append(text)
     score = max(0, p-n)
-    return score, p, n, fneg, fpos, miss
+    return score, p, n, fneg, fpos
 
 def application(environ, start_response):
     '''Main app'''
