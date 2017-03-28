@@ -88,15 +88,10 @@ def application(environ, start_response):
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
         }
-        hgroup {
-        margin-top: 50px;
-        }
-        h1, h2, h3 {
+        h1 {
         color: #000;
         line-height: 1.38em;
         margin: 1.5em 0 .3em;
-        }
-        h1 {
         font-size: 25px;
         font-weight: 300;
         border-bottom: 1px solid #fff;
@@ -137,7 +132,7 @@ def application(environ, start_response):
         cfg = d.get('cfg', [''])[0]
         try:
             score, p, n = corr(cfg)
-            body = "<body>Score partiel : " + str(score) + "/10 (" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues)</body></html>"
+            body = "<body><h1>Grammaire valide</h1><p>Score partiel : " + str(score) + "/10</p><p>" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues</p></body></html>"
         except ValueError:
             body = "<body><h1>Grammaire non-valide</h1><p>Veuillez vérifier la syntaxe :<br></p><pre>" + cfg + "</pre></body></html>"
         response_body += body
