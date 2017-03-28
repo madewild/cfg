@@ -138,7 +138,12 @@ def application(environ, start_response):
                       <h2>Faux positifs (mauvaises phrases reconnues par erreur</h2>
                       </body></html>'''
         except ValueError:
-            body = "<body><h1>Grammaire non-valide</h1><p>Veuillez vérifier la syntaxe :<br></p><pre>" + cfg + "</pre></body></html>"
+            body = '''<body><h1>Grammaire non-valide</h1><p>Veuillez vérifier la syntaxe :<br></p>
+                      <pre>" + cfg + "</pre>
+                      <form method="POST" action="/">
+                        <input type="submit" value="Retour">
+                      </form>  
+                      </body></html>'''
         response_body += body
     else:
         response_body += '''
@@ -148,7 +153,7 @@ def application(environ, start_response):
         <br>
         <form method="POST" action="/correction">
             <textarea rows="40" cols="100" name="cfg" onfocus="clearContents(this);">Copiez ici votre grammaire...</textarea><br><br>
-            <input type="submit">
+            <input type="submit" value="Envoyer">
         </form>
     </div>
 </body>
