@@ -116,6 +116,9 @@ def application(environ, start_response):
         background: #f5f5f5;
         height: 100%;
         }
+        pre {
+            background-color: #bbb
+        }
         </style>
         <script>
         function clearContents(element) {
@@ -136,7 +139,7 @@ def application(environ, start_response):
             score, p, n = corr(cfg)
             body = "<body>Score partiel : " + str(score) + "/10 (" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues)</body></html>"
         except ValueError:
-            body = "<body>Grammaire non-valide, veuillez vérifier la syntaxe :<br><br>" + cfg + "</body></html>"
+            body = "<body>Grammaire non-valide, veuillez vérifier la syntaxe :<br><br><pre>" + cfg + "</pre></body></html>"
         response_body += body
     else:
         response_body += '''
