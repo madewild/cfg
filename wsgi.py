@@ -163,7 +163,7 @@ def application(environ, start_response):
         <h1>Testez votre grammaire CFG</h1>
         <br>
         <form method="POST" action="/correction">
-            <textarea rows="40" cols="100" name="cfg" onfocus="clearContents(this);">Copiez ici votre grammaire pour calculer votre score partiel sur 10.<br>Attention, l'évaluation finale inclura également 20 autres phrases et votre note finale sur 20 pourra donc être très différente !</textarea><br><br>
+            <textarea rows="40" cols="100" name="cfg" onfocus="clearContents(this);">Copiez ici votre grammaire pour calculer votre score partiel sur 10. Attention, l'évaluation finale inclura également 20 autres phrases et votre note finale sur 20 pourra donc être très différente !</textarea><br><br>
             <input type="submit" value="Envoyer">
         </form>
     </div>
