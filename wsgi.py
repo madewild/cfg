@@ -148,6 +148,7 @@ def application(environ, start_response):
         <hgroup>
             <h1>TP sur les grammaires CFG</h1>
         </hgroup>
+        <br>
         <form method="POST" action="/correction">
             <textarea rows="40" cols="100" name="cfg" onfocus="clearContents(this);">Copiez ici votre grammaire...</textarea><br><br>
             <input type="submit">
