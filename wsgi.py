@@ -78,7 +78,8 @@ def application(environ, start_response):
             score, p, n = corr(cfg)
             response_body = "Score partiel : " + str(score) + "/10 (" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues)"
         except ValueError:
-            response_body = "Grammaire non-valide, veuillez vérifier la syntaxe..."
+            response_body = "Grammaire non-valide, veuillez vérifier la syntaxe :<br><br>" + cfg
+
     else:
         ctype = 'text/html'
         response_body = '''<!doctype html>
