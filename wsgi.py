@@ -141,13 +141,16 @@ def application(environ, start_response):
                       <b>''' + str(p) + '''</b> bonnes phrases et <b>''' + str(n) + '''</b> mauvaises phrases reconnues.</p>
                       <h3>Faux négatifs (bonnes phrases non reconnues)</h3><ul><li>''' + '</li><li>'.join(fneg) + '''</li></ul>
                       <h3>Faux positifs (mauvaises phrases reconnues par erreur</h3><ul><li>''' + '</li><li>'.join(fpos) + '''</li></ul>
+                      <form method="POST" action="/">
+                        <input type="submit" value="Retour">
+                      </form>
                       </body></html>'''
         except ValueError:
             body = '''<body><h1>Grammaire non-valide</h1><p>Veuillez vérifier la syntaxe :<br></p>
                       <pre>''' + cfg + '''</pre>
                       <form method="POST" action="/">
                         <input type="submit" value="Retour">
-                      </form>  
+                      </form>
                       </body></html>'''
         response_body += body
     else:
