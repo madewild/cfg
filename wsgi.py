@@ -132,8 +132,8 @@ def application(environ, start_response):
         cfg = d.get('cfg', [''])[0]
         try:
             score, p, n = corr(cfg)
-            body = '''<body><h1>Grammaire valide</h1><p>Score partiel : <b>''' + str(score) + '''/10</b></p>
-                      <p>''' + str(p) + ''' bonnes phrases et ''' + str(n) + ''' mauvaises phrases reconnues</p>
+            body = '''<body><h1>Grammaire valide</h1><p>Score partiel : <b>''' + str(score) + '''/10</b>.</p>
+                      <p><b>''' + str(p) + '''</b> bonnes phrases et <b>''' + str(n) + '''</b> mauvaises phrases reconnues.</p>
                       <h2>Faux négatifs (bonnes phrases non reconnues)<h2>
                       <h2>Faux positifs (mauvaises phrases reconnues par erreur</h2>
                       </body></html>'''
