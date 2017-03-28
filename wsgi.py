@@ -147,7 +147,8 @@ html {
     </hgroup>
     <div align="center">
         <form method="POST" action="/correction">
-            <textarea rows="40" cols="100" name="cfg">Copiez ici votre grammaire</textarea><br>
+            <label for="cfg">Copiez ici votre grammaire</label>
+            <textarea rows="40" cols="100" name="cfg" id="cfg"></textarea><br>
             <input type="submit">
         </form>
     </div>
