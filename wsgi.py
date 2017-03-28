@@ -139,10 +139,10 @@ def application(environ, start_response):
         cfg = d.get('cfg', [''])[0]
         try:
             score, p, n, fneg, fpos, miss = corr(cfg)
-            body = '''<body><h1>Grammaire valide</h1><p>Score partiel : <b>''' + str(score) + '''/10</b>.</p>
-                      <p><b>''' + str(p) + '''</b> bonnes phrases et <b>''' + str(n) + '''</b> mauvaises phrases reconnues.</p>
-                      <h2>Faux négatifs (bonnes phrases non reconnues)<h2><p><ul><li>''' + '</li><li>'.join(fneg) + '''</li></ul>
-                      <h2>Faux positifs (mauvaises phrases reconnues par erreur</h2>''' + '<br>'.join(fpos) + '''
+            body = '''<body><h1>Grammaire valide</h1><p>Score partiel : <b>''' + str(score) + '''/10</b>.<br>
+                      <b>''' + str(p) + '''</b> bonnes phrases et <b>''' + str(n) + '''</b> mauvaises phrases reconnues.</p>
+                      <h2>Faux négatifs (bonnes phrases non reconnues)</h2><ul><li>''' + '</li><li>'.join(fneg) + '''</li></ul>
+                      <h2>Faux positifs (mauvaises phrases reconnues par erreur</h2><ul><li>''' + '</li><li>'.join(fpos) + '''</li></ul>
                       </body></html>'''
         except ValueError:
             body = '''<body><h1>Grammaire non-valide</h1><p>Veuillez vérifier la syntaxe :<br></p>
