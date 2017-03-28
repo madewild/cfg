@@ -36,6 +36,9 @@ def corr(string):
     parser = nltk.ChartParser(gram)
     p = 0
     n = 0
+    fneg = []
+    fpos = []
+    miss = []
     for text in pos:
         tokens = nltk.tokenize.wordpunct_tokenize(text.lower())
         try:
@@ -44,17 +47,21 @@ def corr(string):
             trees = []
         if len(list(trees)) > 0:
             p += 1
+        else:
+            fneg.append(text)
     for text in neg:
         tokens = nltk.tokenize.wordpunct_tokenize(text.lower())
         try:
             trees = parser.parse(tokens)
         except ValueError:
             trees = []
+            miss.append(text)
         for tree in trees:
             if tree:
                 n += 1
+                fpos.append(text)
     score = max(0, p-n)
-    return score, p, n
+    return score, p, n, fneg, fpos, miss
 
 def application(environ, start_response):
     '''Main app'''
@@ -131,11 +138,11 @@ def application(environ, start_response):
         d = parse_qs(request_body)
         cfg = d.get('cfg', [''])[0]
         try:
-            score, p, n = corr(cfg)
+            score, p, n, fneg, fpos, miss = corr(cfg)
             body = '''<body><h1>Grammaire valide</h1><p>Score partiel : <b>''' + str(score) + '''/10</b>.</p>
                       <p><b>''' + str(p) + '''</b> bonnes phrases et <b>''' + str(n) + '''</b> mauvaises phrases reconnues.</p>
-                      <h2>Faux négatifs (bonnes phrases non reconnues)<h2>
-                      <h2>Faux positifs (mauvaises phrases reconnues par erreur</h2>
+                      <h2>Faux négatifs (bonnes phrases non reconnues)<h2>''' + '<br>'.join(fneg) + '''
+                      <h2>Faux positifs (mauvaises phrases reconnues par erreur</h2>''' + '<br>'.join(fpos) + '''
                       </body></html>'''
         except ValueError:
             body = '''<body><h1>Grammaire non-valide</h1><p>Veuillez vérifier la syntaxe :<br></p>
