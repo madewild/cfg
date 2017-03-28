@@ -117,6 +117,11 @@ def application(environ, start_response):
         height: 100%;
         }
         </style>
+        <script>
+        function clearContents(element) {
+            element.value = '';
+        }
+        </script>
         </head>
         '''
     if environ['PATH_INFO'] == '/correction':
@@ -132,7 +137,7 @@ def application(environ, start_response):
             body = "<body>Score partiel : " + str(score) + "/10 (" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues)</body></html>"
         except ValueError:
             body = "<body>Grammaire non-valide, veuillez vérifier la syntaxe :<br><br>" + cfg + "</body></html>"
-        response_body += body 
+        response_body += body
     else:
         response_body += '''
 <body>
@@ -141,8 +146,7 @@ def application(environ, start_response):
             <h1>TP sur les grammaires CFG</h1>
         </hgroup>
         <form method="POST" action="/correction">
-            <label for="cfg">Copiez ici votre grammaire</label>
-            <textarea rows="40" cols="100" name="cfg" id="cfg"></textarea><br>
+            <textarea rows="40" cols="100" name="cfg" onfocus="clearContents(this);">Copiez ici votre grammaire...</textarea><br>
             <input type="submit">
         </form>
     </div>
