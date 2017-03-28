@@ -142,21 +142,15 @@ html {
 </style>
 </head>
 <body>
-<section class='container'>
-        <hgroup>
+    <hgroup>
         <h1>TP sur les grammaires CFG</h1>
-        </hgroup>
-        <div class="row">
-          <section class='col-xs-12 col-sm-6 col-md-6'>
-            <section>
-                <form method="POST" action="/correction">
-                <textarea rows="40" cols="100" name="cfg">Copiez ici votre grammaire</textarea><br>
-                <input type="submit">
-                </form>
-            </section>
-          </section>
-        </div>
-</section>
+    </hgroup>
+    <div align="center">
+        <form method="POST" action="/correction">
+            <textarea rows="40" cols="100" name="cfg">Copiez ici votre grammaire</textarea><br>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 </html>'''
 
