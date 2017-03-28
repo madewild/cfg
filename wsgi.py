@@ -117,7 +117,7 @@ def application(environ, start_response):
         height: 100%;
         }
         pre {
-            background-color: #bbb
+            background-color: #ccc
         }
         </style>
         <script>
