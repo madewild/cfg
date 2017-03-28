@@ -73,7 +73,7 @@ def application(environ, start_response):
         request_body = environ['wsgi.input'].read(request_body_size)
         d = parse_qs(request_body)
         cfg = d.get('cfg', [''])[0]
-        #cfg = escape(cfg)
+        ctype = 'text/html'
         try:
             score, p, n = corr(cfg)
             response_body = "Score partiel : " + str(score) + "/10 (" + str(p) + " bonnes phrases et " + str(n) + " mauvaises phrases reconnues)"
