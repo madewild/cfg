@@ -142,10 +142,10 @@ html {
 </style>
 </head>
 <body>
-    <hgroup>
-        <h1>TP sur les grammaires CFG</h1>
-    </hgroup>
     <div align="center">
+        <hgroup>
+            <h1>TP sur les grammaires CFG</h1>
+        </hgroup>
         <form method="POST" action="/correction">
             <label for="cfg">Copiez ici votre grammaire</label>
             <textarea rows="40" cols="100" name="cfg" id="cfg"></textarea><br>
