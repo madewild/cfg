@@ -58,6 +58,7 @@ def corr(string):
             if tree:
                 n += 1
                 fpos.append(text)
+                break
     score = max(0, p-n)
     return score, p, n, fneg, fpos
 
