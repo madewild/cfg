@@ -138,10 +138,10 @@ def application(environ, start_response):
         cfg = d.get('cfg', [''])[0]
         try:
             score, p, n, fneg, fpos, = corr(cfg)
-            correct = 'correcte' if p == 1 else 'correctes'
-            incorrect = 'incorrecte' if n == 1 else 'incorrectes'
+            correct = 'phrase correcte' if p == 1 else 'phrases correctes'
+            incorrect = 'phrase incorrecte' if n == 1 else 'phrases incorrectes'
             body = '<body><h1>Grammaire valide</h1><p>Score partiel : <b>' + str(score) + '/10</b>.<br>'
-            body += '<b>' + str(p) + '</b> phrases ' + correct + ' et <b>' + str(n) + '</b> phrases ' + incorrect + ' reconnues.</p>'
+            body += '<b>' + str(p) + '</b> ' + correct + ' et <b>' + str(n) + '</b> ' + incorrect + ' reconnues.</p>'
             if fneg:
                 body += '<h3>Faux négatifs (phrases correctes non reconnues) :</h3><ul><li>' + '</li><li>'.join(fneg) + '</li></ul>'
             if fpos:
