@@ -138,7 +138,7 @@ def application(environ, start_response):
         try:
             score, p, n, fneg, fpos, = corr(cfg)
             body = '''<body><h1>Grammaire valide</h1><p>Score partiel : <b>''' + str(score) + '''/10</b>.<br>
-                      <b>''' + str(p) + '''</b> phrases corrected et <b>''' + str(n) + '''</b> phrases incorrectes reconnues.</p>'''
+                      <b>''' + str(p) + '''</b> phrases correctes et <b>''' + str(n) + '''</b> phrases incorrectes reconnues.</p>'''
             if fneg:
                 body += '<h3>Faux négatifs (phrases correctes non reconnues) :</h3><ul><li>' + '</li><li>'.join(fneg) + '</li></ul>'
             if fpos:
