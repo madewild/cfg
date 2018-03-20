@@ -3,7 +3,6 @@
 
 """ Python app for CFG grammar """
 
-import os
 from cgi import parse_qs
 import nltk
 
