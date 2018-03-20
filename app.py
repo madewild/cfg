@@ -1,26 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""
-Python app for CFG grammar
-"""
-
-#pylint: disable = locally-disabled, invalid-name, line-too-long
+""" Python app for CFG grammar """
 
 import os
 from cgi import parse_qs
-
-virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
-virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except IOError:
-    pass
-#
-# IMPORTANT: Put any additional includes below this line.  If placed above this
-# line, it's possible required libraries won't be in your searchable path
-#
-
 import nltk
 
 def corr(string):
