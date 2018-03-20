@@ -9,10 +9,10 @@ import nltk
 
 def corr(string):
     '''Compute score based on CFG input'''
-    pos = open(os.environ['OPENSHIFT_REPO_DIR']+'pos.txt').readlines()
+    pos = open('pos.txt').readlines()
     pos = [line.strip() for line in pos]
 
-    neg = open(os.environ['OPENSHIFT_REPO_DIR']+'neg.txt').readlines()
+    neg = open('neg.txt').readlines()
     neg = [line.strip() for line in neg]
 
     lowstring = string.lower()
