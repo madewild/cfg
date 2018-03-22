@@ -1,6 +1,25 @@
 {% extends 'template.html' %}
 {% block content %}
-    <div align="center">
-        Bravo !
-    </div>
+    <h1>Grammaire valide</h1>
+    <p>Score partiel : <b>{{score}}/10</b>.</p>
+    <p><b>{{p}}</b> {{correct}} et <b>{{n}}</b> {{incorrect}} reconnues.</p>
+    {% if fneg %}
+        <h3>Faux négatifs (phrases correctes non reconnues) :</h3>
+        <ul>
+            {% for sent in fneg %}
+            <li>{{sent}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if fpos %}
+        <h3>Faux positifs (phrases incorrectes reconnues par erreur) :</h3>
+        <ul>
+            {% for sent in fpos %}
+            <li>{{sent}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="POST" action="/">
+        <input type="submit" value="Retour">
+    </form>
 {% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'template.html' %}
+{% block content %}
+    <h1>Grammaire non-valide</h1>
+    <p>Veuillez vérifier la syntaxe :<br></p>
+    <pre>{{gram}}</pre>
+    <form method="POST" action="/">
+        <input type="submit" value="Retour">
+    </form>
+{% endblock %}
