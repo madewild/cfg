@@ -1,9 +1,5 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
 """ Python app for CFG grammar """
 
-from cgi import parse_qs
 import nltk
 
 def corr(string):
