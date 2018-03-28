@@ -1,10 +1,10 @@
-Je voudrais un vol pour Paris
-Marie voudrait un vol pour Bruxelles
-Pierre voudrait reserver un vol
-L avion part de Venise
-Il arrivera a Bruxelles a trois heures
-L avion arrivera demain matin
-Marie part de Bruxelles
-Je voudrais reserver un vol pour Bruxelles
-Pierre et Marie arriveront demain
-Elle voudrait un vol de Paris a Bruxelles
+Je voudrais des frites
+Marie voudrait une grande frite
+Il aime ses frites avec du ketchup
+La sauce est comprise dans le prix
+Pierre prend un burger et des frites
+Elles aiment le ketchup et la mayonnaise
+La mayonnaise est une sauce
+Ils prennent deux petites frites
+Le prix comprend le burger
+Nous aimons les frites sans sauce
