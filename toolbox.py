@@ -10,7 +10,7 @@ def test_cfg(string):
     neg = open('neg.txt').readlines()
     neg = [line.strip() for line in neg]
 
-    lowstring = string.lower()
+    lowstring = string.lower().replace("Þ", "->")
     gram = nltk.CFG.fromstring(lowstring)
     parser = nltk.ChartParser(gram)
     p = 0
