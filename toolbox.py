@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Functions for CFG testing"""
 
 import nltk
