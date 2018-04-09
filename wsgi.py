@@ -17,7 +17,8 @@ def corr():
         correct = 'phrase correcte' if p == 1 else 'phrases correctes'
         incorrect = 'phrase incorrecte' if n == 1 else 'phrases incorrectes'
         return render_template('corr.html', score=str(score), p=str(p), n=str(n), correct=correct, incorrect=incorrect, fneg=fneg, fpos=fpos)
-    except ValueError:
+    except ValueError as e:
+        print(e)
         return render_template('wrong.html', gram=gram)
 
 if __name__ == "__main__":
