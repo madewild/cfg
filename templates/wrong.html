@@ -4,6 +4,7 @@
     <p>Veuillez vérifier la syntaxe :<br></p>
     <pre>{{gram}}</pre>
     <form method="POST" action="/">
+        <input type="hidden" name="gram" value="{{gram}}">
         <input type="submit" value="Retour">
     </form>
 {% endblock %}
