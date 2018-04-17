@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Functions for CFG testing"""
 
-import nltk
+from nltk import ChartParser
+from nltk import CFG
+from nltk.tokenize import wordpunct_tokenize
 
 def test_cfg(string):
     '''Compute score based on CFG input'''
@@ -12,14 +14,14 @@ def test_cfg(string):
     neg = [line.strip() for line in neg]
 
     lowstring = string.lower().encode('utf-8').replace("Þ", "->")
-    gram = nltk.CFG.fromstring(lowstring)
-    parser = nltk.ChartParser(gram)
+    gram = CFG.fromstring(lowstring)
+    parser = ChartParser(gram)
     p = 0
     n = 0
     fneg = []
     fpos = []
     for text in pos:
-        tokens = nltk.tokenize.wordpunct_tokenize(text.lower())
+        tokens = wordpunct_tokenize(text.lower())
         try:
             trees = parser.parse(tokens)
         except ValueError:
@@ -29,7 +31,7 @@ def test_cfg(string):
         else:
             fneg.append(text)
     for text in neg:
-        tokens = nltk.tokenize.wordpunct_tokenize(text.lower())
+        tokens = wordpunct_tokenize(text.lower())
         try:
             trees = parser.parse(tokens)
         except ValueError:
