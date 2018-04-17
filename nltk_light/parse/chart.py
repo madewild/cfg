@@ -44,13 +44,13 @@ from functools import total_ordering
 
 from six.moves import range
 
-from nltk.tree import Tree
-from nltk.grammar import PCFG, is_nonterminal, is_terminal
-from nltk.util import OrderedDict
-from nltk.internals import raise_unorderable_types
-from nltk.compat import python_2_unicode_compatible, unicode_repr
+from nltk_light.tree import Tree
+from nltk_light.grammar import PCFG, is_nonterminal, is_terminal
+from nltk_light.util import OrderedDict
+from nltk_light.internals import raise_unorderable_types
+from nltk_light.compat import python_2_unicode_compatible, unicode_repr
 
-from nltk.parse.api import ParserI
+from nltk_light.parse.api import ParserI
 
 
 ########################################################################

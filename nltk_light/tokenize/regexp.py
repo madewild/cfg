@@ -69,9 +69,9 @@ from __future__ import unicode_literals
 
 import re
 
-from nltk.tokenize.api import TokenizerI
-from nltk.tokenize.util import regexp_span_tokenize
-from nltk.compat import python_2_unicode_compatible
+from nltk_light.tokenize.api import TokenizerI
+from nltk_light.tokenize.util import regexp_span_tokenize
+from nltk_light.compat import python_2_unicode_compatible
 
 
 @python_2_unicode_compatible
