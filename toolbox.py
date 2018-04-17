@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """Functions for CFG testing"""
 
-from nltk import ChartParser
-from nltk import CFG
-from nltk.tokenize import wordpunct_tokenize
+from nltk_light.parse.chart import ChartParser
+from nltk_light.grammar import CFG
+from nltk_light.tokenize.regexp import wordpunct_tokenize
 
 def test_cfg(string):
     '''Compute score based on CFG input'''
