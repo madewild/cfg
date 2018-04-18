@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Functions for CFG testing"""
 
 from nltk_light.parse.chart import ChartParser
@@ -13,7 +12,7 @@ def test_cfg(string):
     neg = open('neg.txt').readlines()
     neg = [line.strip() for line in neg]
 
-    lowstring = string.lower().encode('utf-8').replace("Þ", "->")
+    lowstring = string.lower().replace("Þ", "->")
     gram = CFG.fromstring(lowstring)
     parser = ChartParser(gram)
     p = 0
