@@ -1,23 +1,22 @@
-# coding: utf-8
 """Functions for CFG testing"""
 
 from nltk_light.parse.chart import ChartParser
 from nltk_light.grammar import CFG
 from nltk_light.tokenize.regexp import wordpunct_tokenize
 
-def test_cfg(string):
-    '''Compute score based on CFG input'''
+def test_cfg(grammar_string):
+    """Compute score based on CFG input"""
     pos = open('pos.txt').readlines()
     pos = [line.strip() for line in pos]
 
     neg = open('neg.txt').readlines()
     neg = [line.strip() for line in neg]
 
-    if isinstance(string, str): # python2 compat
-        string = string.encode("utf-8")
-    lowstring = string.replace("Þ", "->").lower()
-    print(lowstring)
-    gram = CFG.fromstring(lowstring)
+    print(grammar_string)
+    lowgrammar_string = grammar_string.replace("Þ", "->").lower()
+    print(lowgrammar_string)
+
+    gram = CFG.fromstring(lowgrammar_string)
     parser = ChartParser(gram)
     p = 0
     n = 0
