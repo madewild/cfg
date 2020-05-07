@@ -9,11 +9,7 @@ def form():
     try:
         data = request.form
         gram = data['gram']
-        try:
-            sent = data['sent']
-        except:
-            sent = ""
-        return render_template('gram.html', gram=gram, sent=sent)
+        return render_template('gram.html', gram=gram)
     except:
         return render_template('form.html')
 
