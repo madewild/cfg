@@ -19,8 +19,8 @@ def corr():
     gram = data['cfg']
     sent = data['sent']
     if sent and sent != "Testez ici une seule phrase (optionnel)":
+        print("entering sent")
         try:
-            print("entering sent")
             success = eval_sent(gram, sent)
             msg = "a bien" if success else "n'a pas"
             return render_template('corr2.html', sent=sent, msg=msg, gram=gram)
@@ -28,6 +28,7 @@ def corr():
             print(e)
             return render_template('wrong.html', gram=gram)
     else:
+        print("entering test")
         try:
             score, p, n, fneg, fpos, = test_cfg(gram)
             correct = 'phrase correcte' if p == 1 else 'phrases correctes'
