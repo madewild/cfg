@@ -20,6 +20,7 @@ def corr():
     sent = data['sent']
     if sent and sent != "Testez ici une seule phrase (optionnel)":
         try:
+            print("entering sent")
             success = eval_sent(gram, sent)
             msg = "a bien" if success else "n'a pas"
             return render_template('corr2.html', sent=sent, msg=msg, gram=gram)
