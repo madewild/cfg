@@ -9,7 +9,11 @@ def form():
     try:
         data = request.form
         gram = data['gram']
-        return render_template('gram.html', gram=gram)
+        try:
+            sent = data['sent']
+        except:
+            sent = ""
+        return render_template('gram.html', gram=gram, sent=sent)
     except:
         return render_template('form.html')
 
@@ -18,7 +22,7 @@ def corr():
     data = request.form
     gram = data['cfg']
     sent = data['sent']
-    if sent:
+    if sent and sent != "Testez ici une seule phrase (optionnel)":
         try:
             success = eval_sent(gram, sent)
             msg = "a bien" if success else "n'a pas"
