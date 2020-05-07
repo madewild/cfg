@@ -4,6 +4,7 @@
     <p>La phrase "{{sent}}" {{msg}} été reconnue par cette grammaire.</p>
     <form method="POST" action="/">
         <input type="hidden" name="gram" value="{{gram}}">
+        <input type="hidden" name="sent" value="{{sent}}">
         <input type="submit" value="Retour">
     </form>
 {% endblock %}
