@@ -45,3 +45,18 @@ def test_cfg(grammar_string):
                 break
     score = max(0, p-n)
     return score, p, n, fneg, fpos
+
+def eval_sent(grammar_string, text):
+    """Test one single sentence against CFG"""
+    lowgrammar_string = grammar_string.replace("Þ", "->").lower()
+    gram = CFG.fromstring(lowgrammar_string)
+    parser = ChartParser(gram)
+    tokens = wordpunct_tokenize(text.lower())
+    success = False
+    try:
+        trees = parser.parse(tokens)
+    except ValueError:
+        trees = []
+    if len(list(trees)) > 0:
+        success = True
+    return success
