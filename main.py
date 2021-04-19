@@ -44,4 +44,4 @@ def server_error(e):
     return 'An internal error occurred.', 500
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
