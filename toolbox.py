@@ -1,15 +1,21 @@
 """Functions for CFG testing"""
 
+import os
+
 from nltk_light.parse.chart import ChartParser
 from nltk_light.grammar import CFG
 from nltk_light.tokenize.regexp import wordpunct_tokenize
 
 def test_cfg(grammar_string):
     """Compute score based on CFG input"""
-    pos = open('pos.txt').readlines()
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    pos_file = os.path.join(THIS_FOLDER, 'pos.txt')
+    neg_file = os.path.join(THIS_FOLDER, 'neg.txt')
+
+    pos = open(pos_file).readlines()
     pos = [line.strip() for line in pos]
 
-    neg = open('neg.txt').readlines()
+    neg = open(neg_file).readlines()
     neg = [line.strip() for line in neg]
 
     print(grammar_string)
