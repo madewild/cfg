@@ -10,7 +10,8 @@ def form():
     try:
         data = request.form
         gram = data['gram']
-        return render_template('gram.html', gram=gram)
+        sent = data['sent']
+        return render_template('gram.html', gram=gram, sent=sent)
     except:
         return render_template('form.html')
 
